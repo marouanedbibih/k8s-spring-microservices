@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hystrix-microservice-deployment
+  labels:
+    app: hystrix-microservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hystrix-microservice
+  template:
+    metadata:
+      labels:
+        app: hystrix-microservice
+    spec:
+      containers:
+      - name: hystrix-microservice-container
+        image: marouanedbibih/rh-hystrix-microservice:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        ports:
+        - containerPort: 9295

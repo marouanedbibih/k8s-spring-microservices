@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  departement-microservice-svc
+spec:
+  selector:
+    app:  departement-microservice
+  ports:
+  - port:  80
+    targetPort:  9001
+  type: ClusterIP

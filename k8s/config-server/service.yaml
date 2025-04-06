@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  config-server-svc
+spec:
+  selector:
+    app:  config-server
+  ports:
+  - port:  80
+    targetPort:  9296
+  type: ClusterIP

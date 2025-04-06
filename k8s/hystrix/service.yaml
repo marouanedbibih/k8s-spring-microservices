@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  hystrix-microservice-svc
+spec:
+  selector:
+    app:  hystrix-microservice
+  type: NodePort
+  ports:
+  - port:  80
+    targetPort:  9295
+    nodePort: 30001

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  user-microservice-svc
+spec:
+  selector:
+    app:  user-microservice
+  type: ClusterIP
+  ports:
+  - port:  80
+    targetPort:  9002

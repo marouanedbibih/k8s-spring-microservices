@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  gateway-svc
+spec:
+  selector:
+    app:  gateway
+  ports:
+  - port:  80
+    targetPort:  9191
+  type: LoadBalancer
